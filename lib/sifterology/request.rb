@@ -29,9 +29,10 @@ module Sifterology
     def setup_headers(options)
       options.merge!(
         :headers => {
-          'X-Sifter-Token' => resource.session.token,
-          'Content-Type'   => 'application/json',
-          'Accept'         => 'application/json'
+          'X-Sifter-Token'  => resource.session.token,
+          'X-Partner-Token' => resource.session.partner_token,
+          'Content-Type'    => 'application/json',
+          'Accept'          => 'application/json'
         }
       )
     end
@@ -49,7 +50,7 @@ module Sifterology
       if response.response.kind_of?(Net::HTTPSuccess)
         response.parsed_response
       else
-        convert_sifter_messages_to_exceptions(response['error'])
+        convert_sifter_messages_to_exceptions(response['error'] || response['detail'])
         response
       end
     end

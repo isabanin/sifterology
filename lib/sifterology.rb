@@ -5,8 +5,8 @@ module Sifterology
   
   VERSION = '0.1.0'
 
-  def self.session(account_url, token)
-    Session.new(account_url, token)
+  def self.session(account_url, token, options={})
+    Session.new(account_url, token, options)
   end
   
 end
@@ -21,4 +21,6 @@ require_local "sifterology/request"
 require_local "sifterology/resource"
 require_local "sifterology/session"
 require_local "sifterology/project"
+require_local "sifterology/commit"
 require_local "sifterology/factories/project_factory"
+require_local "sifterology/factories/commit_factory"

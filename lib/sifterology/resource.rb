@@ -5,6 +5,14 @@ module Sifterology
     attr_reader :session, :factory
     attr_accessor :last_request
     
+    def self.sifter_attrs(*args)
+      args.each do |name|
+        define_method(name) do
+          instance_variable_get("@_sifter_#{name}")
+        end
+      end
+    end
+    
     def initialize(session, factory=nil)
       @session = session
       @factory = factory
@@ -27,6 +35,12 @@ module Sifterology
     end
 
     def attributes=(hash)
+      hash.each_pair do |name, value|
+        instance_variable_set("@_sifter_#{ name }", value)
+      end
+    end
+    
+    def local_attributes=(hash)
       hash.each_pair do |name, value|
         instance_variable_set("@#{ name }", value)
       end

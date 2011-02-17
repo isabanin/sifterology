@@ -2,40 +2,20 @@ module Sifterology
   
   class SifterError < Exception
     
-    attr_reader :text
-    
-    def initialize(text)
-      @text = text
+    def initialize(msg=nil)
+      @message = msg
     end
     
-    def message
-      text
-    end
-    
-  end
-  
-  class SSLRequired < Exception
-    
-    def message
-      "Sifter API requires HTTPS protocol for proper functioning."      
+    def to_s
+      @message
     end
     
   end
   
-  class InvalidToken < Exception
-    
-    def message
-      "Specified API token is not valid."
-    end
-    
-  end
+  class SSLRequired < SifterError; end
   
-  class InvalidAccount < Exception
-    
-    def message
-      "Specified account domain is not valid."
-    end
-    
-  end
+  class InvalidToken < SifterError; end
+  
+  class InvalidAccount < SifterError; end
   
 end

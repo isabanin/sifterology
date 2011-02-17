@@ -7,11 +7,11 @@ module Sifterology
     def translate_to_exception(sifter_message)
       case sifter_message
       when /Secure Connection Required/i
-        return SSLRequired.new
+        return SSLRequired.new(sifter_message)
       when /Invalid Token/i
-        return InvalidToken.new
+        return InvalidToken.new(sifter_message)
       when /Invalid Account/i
-        return InvalidAccount.new
+        return InvalidAccount.new(sifter_message)
       end
       
       SifterError.new(sifter_message)

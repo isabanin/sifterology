@@ -7,10 +7,9 @@ module Sifterology
     end
     
     def find_all
-      projects = []
-      projects.tap do
-        get("#{ entity_base }/")['projects'].each do |project_attrs|
-          projects << build(project_attrs)
+      [].tap do |arr|
+        get("#{ entity_base }/?all=true")['projects'].each do |project_attrs|
+          arr << build(project_attrs)
         end
       end
     end
