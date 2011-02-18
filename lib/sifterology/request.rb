@@ -21,28 +21,19 @@ module Sifterology
     end
     
   private
-  
-    def default_headers
-      self.class.default_options[:headers]
-    end
     
-    def setup_headers(options)
-      options.merge!(
-        :headers => {
-          'X-Sifter-Token'  => resource.session.token,
-          'X-Partner-Token' => resource.session.partner_token,
-          'Content-Type'    => 'application/json',
-          'Accept'          => 'application/json'
-        }
-      )
+    def setup_headers
+      Hash.new.tap do |h|
+        h['X-Sifter-Token']  = resource.session.token
+        h['Content-Type']    = 'application/json'
+        h['Accept']          = 'application/json'
+        h['X-Partner-Token'] = resource.session.partner_token if resource.session.partner_token
+      end
     end
     
     def prepare_options(options)
-      setup_headers(options)
-      
-      if options[:body].kind_of?(Hash)
-        options[:body] = options[:body].to_json
-      end
+      options[:headers] = setup_headers
+      options[:body]    = options[:body].to_json if options[:body].kind_of?(Hash)
     end
     
     def process_response(response)
