@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sifterology}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ilya Sabanin"]
-  s.date = %q{2011-02-17}
-  s.description = %q{TODO: longer description of your gem}
+  s.date = %q{2011-02-18}
+  s.description = %q{Yeah, that's true.}
   s.email = %q{ilya.sabanin@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "VERSION",
     "lib/sifterology.rb",
     "lib/sifterology/commit.rb",
     "lib/sifterology/error_translator.rb",
@@ -33,6 +34,7 @@ Gem::Specification.new do |s|
     "lib/sifterology/request.rb",
     "lib/sifterology/resource.rb",
     "lib/sifterology/session.rb",
+    "sifterology.gemspec",
     "test/helper.rb",
     "test/test_sifterology.rb"
   ]
@@ -40,7 +42,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{Quick and dirty API wrapper for Sifter app.}
   s.test_files = [
     "test/helper.rb",
     "test/test_sifterology.rb"

@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "sifterology"
   gem.homepage = "http://github.com/iSabanin/sifterology"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "Quick and dirty API wrapper for Sifter app."
+  gem.description = "Yeah, that's true."
   gem.email = "ilya.sabanin@gmail.com"
   gem.authors = ["Ilya Sabanin"]
   gem.add_dependency "httparty", ">= 0.6.1"

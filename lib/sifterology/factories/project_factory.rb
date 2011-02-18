@@ -15,9 +15,15 @@ module Sifterology
     end
     
     def build(attributes)
-      project = Project.new(session, self)
-      project.attributes = attributes
-      project
+      Project.new(session, self).tap do |p|
+        p.attributes = attributes
+      end
+    end
+    
+    def new_from_url(url)
+      Project.new(session, self).tap do |p|
+        p.api_url = url
+      end
     end
     
   end

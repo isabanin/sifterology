@@ -15,7 +15,8 @@ module Sifterology
     end
     
     def test_request
-      post(File.join(api_path, 'beanstalk', 'test'), :body => '')
+      response = post(File.join(api_path, 'beanstalk', 'test'), :body => '')
+      response && response["summary"] == 'Success'
     end
     
   end

@@ -10,6 +10,10 @@ module Sifterology
         define_method(name) do
           instance_variable_get("@_sifter_#{name}")
         end
+        
+        define_method("#{name}=") do |value|
+          instance_variable_set("@_sifter_#{name}", value)
+        end
       end
     end
     
