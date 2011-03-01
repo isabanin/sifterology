@@ -4,7 +4,7 @@ module Sifterology
   
   class Project < Resource
     
-    sifter_attrs :name, :api_url, :archived, :primary_company_name
+    sifter_attrs :name, :api_url, :issues_url, :archived, :primary_company_name
     
     def archived?
       archived
