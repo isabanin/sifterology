@@ -3,7 +3,7 @@ GEM
   specs:
     crack (0.1.8)
     git (1.2.5)
-    httparty (0.6.1)
+    httparty (0.7.4)
       crack (= 0.1.8)
     jeweler (1.5.2)
       bundler (~> 1.0.0)
@@ -16,6 +16,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  httparty (~> 0.6.1)
+  httparty (~> 0.7.3)
   jeweler
   json (~> 1.4.6)

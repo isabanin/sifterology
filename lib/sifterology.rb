@@ -1,3 +1,4 @@
+gem 'httparty', '>= 0.7.3'
 require 'httparty'
 require 'json'
 
