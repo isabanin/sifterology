@@ -38,12 +38,16 @@ module Sifterology
     
     def process_response(response)
       memorize_response_data(response)
-      if response.response.kind_of?(Net::HTTPSuccess)
-        response.parsed_response
+      if response.code == 200
+        if response.respond_to?(:parsed_response)
+          response.parsed_response
+        else
+          response
+        end
       else
         convert_sifter_messages_to_exceptions(response['error'] || response['detail'])
         response
-      end
+      end      
     end
     
     def convert_sifter_messages_to_exceptions(messages)
