@@ -4,7 +4,7 @@ module Sifterology
     
     include HTTParty
 
-    debug_output $stdout
+    #debug_output $stdout
     
     attr_reader :resource, :response
     
