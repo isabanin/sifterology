@@ -3,7 +3,7 @@ require 'json'
 
 module Sifterology
   
-  VERSION = '0.1.1'
+  VERSION = '0.1.2'
 
   def self.session(account_url, token, options={})
     Session.new(account_url, token, options)

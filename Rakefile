@@ -21,7 +21,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = "Yeah, that's true."
   gem.email = "ilya.sabanin@gmail.com"
   gem.authors = ["Ilya Sabanin"]
-  gem.add_dependency "httparty", ">= 0.6.1"
+  gem.add_dependency "httparty", ">= 0.5"
   gem.add_dependency "json", ">= 1.4.6"
 end
 Jeweler::RubygemsDotOrgTasks.new

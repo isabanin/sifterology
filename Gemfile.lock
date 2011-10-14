@@ -16,6 +16,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  httparty (~> 0.6.1)
+  httparty (>= 0.5)
   jeweler
   json (~> 1.4.6)
